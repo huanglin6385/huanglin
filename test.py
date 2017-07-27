@@ -4,4 +4,4 @@ class Solution(object):
     def getValue(self,k1):
 
         def binary_search(left,right,k):
-            mid =
+            mid =  test a a aa
