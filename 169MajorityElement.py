@@ -1,14 +1,19 @@
-#46.42
-import collections
+#87.49
 class Solution(object):
     def majorityElement(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        dict1 = collections.defaultdict(int)
-        length = len(nums)
-        for i in nums:
-            dict1[i] += 1
-            if dict1[i] > length/2:
-                return i
+        res = nums[0]
+        counter = 0
+        for i in range(len(nums)):
+            if nums[i] == res:
+                counter += 1
+            elif counter > 0:
+                counter -= 1
+            else:
+                res = nums[i]
+                counter = 1
+
+        return res
